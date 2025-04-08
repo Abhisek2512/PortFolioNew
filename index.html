@@ -28,14 +28,9 @@
         <a href="#contact" class="hover:text-green-500 transition">Contact</a>
       </nav>
       <!-- Dark mode toggle -->
-      <!-- Theme Toggle Button -->
-<button id="theme-toggle" class="fixed top-4 right-4 bg-white dark:bg-gray-700 p-2 rounded-full shadow-lg z-50 transition hover:scale-105">
-  <svg id="theme-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-yellow-500 dark:text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-      d="M12 3v1m0 16v1m8.485-8.485h-1M4.515 12.515H3m15.364 6.364l-.707-.707M6.343 6.343L5.636 5.636M16.95 7.05l-.707-.707M7.05 16.95l-.707-.707" />
-  </svg>
-</button>
-
+      <button id="dark-toggle" class="ml-4 text-xl">
+        <i class="fas fa-moon"></i>
+      </button>
     </div>
   </header>
 
@@ -356,7 +351,7 @@
     <a href="https://github.com/Abhisek2512" target="_blank" class="hover:text-gray-900 dark:hover:text-white transition">
       <i class="fab fa-github text-xl"></i>
     </a>
-    <a href="https://www.linkedin.com/in/abhisek-nashirkar" target="_blank" class="hover:text-blue-400 transition">
+    <a href="https://twitter.com/YOUR_USERNAME" target="_blank" class="hover:text-blue-400 transition">
       <i class="fab fa-twitter text-xl"></i>
     </a>
   </div>
@@ -408,27 +403,6 @@
   // Check dark mode preference on page load
     
   </script>
-  <script>
-    const themeToggle = document.getElementById('theme-toggle');
-    const html = document.documentElement;
-  
-    // Set initial mode based on local storage
-    if (localStorage.getItem('theme') === 'dark') {
-      html.classList.add('dark');
-    }
-  
-    themeToggle.addEventListener('click', () => {
-      html.classList.toggle('dark');
-  
-      // Save preference
-      if (html.classList.contains('dark')) {
-        localStorage.setItem('theme', 'dark');
-      } else {
-        localStorage.setItem('theme', 'light');
-      }
-    });
-  </script>
-  
 </body>
 </html>
 
