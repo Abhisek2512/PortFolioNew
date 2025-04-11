@@ -2,11 +2,7 @@
 html {
     scroll-behavior: smooth;
     
-  }
-  body {
-      width: 100%;
-      font-family: Arial, sans-serif;
-    }
+}
     body.dark-mode {
       background-color: rgb(17, 8, 8);
       color: rgb(202, 31, 31);
