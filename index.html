@@ -50,10 +50,16 @@
    <!-- About Section -->
   <section id="about" class="py-16 scroll-mt-24 bg-gray-100 dark:bg-gray-800">
     <div class="max-w-6xl mx-auto px-4 md:flex md:items-center md:space-x-12">
-      <!-- Profile Image Placeholder -->
-      <div class="mb-8 md:mb-0 md:w-1/2 flex justify-center">
-        <img src="profile.png" alt="Profile" class="rounded-2xl w-64 h-64 object-cover shadow-lg" />
-      </div>
+     <!-- Profile Image Section -->
+<div class="mb-8 md:mb-0 md:w-1/2 flex justify-center">
+  <div class="relative w-72 h-72 rounded-[2rem] bg-white/10 backdrop-blur-md shadow-xl border border-white/30 overflow-hidden transition-transform transform hover:scale-105 hover:shadow-2xl duration-300">
+    <img src="profile.png" alt="Profile" class="w-full h-full object-cover rounded-[2rem] transition-opacity duration-300 hover:opacity-90" />
+    
+    <!-- Optional Overlay or Shine Effect -->
+    <div class="absolute inset-0 rounded-[2rem] pointer-events-none bg-gradient-to-br from-white/10 via-white/5 to-transparent"></div>
+  </div>
+</div>
+
 
       <!-- About Text -->
       <div class="md:w-1/2" data-aos="fade-left">
