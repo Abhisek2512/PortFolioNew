@@ -13,59 +13,8 @@
   <link rel="stylesheet" href="script.js">
  
 </head>
-<style>
-  :root {
-    --bg: #ffffff;
-    --text: #111111;
-    --accent: #3b82f6;
-  }
 
-  [data-theme="dark"] {
-    --bg: #111111;
-    --text: #ffffff;
-    --accent: #22d3ee;
-  }
-
-  [data-theme="solarized"] {
-    --bg: #fdf6e3;
-    --text: #657b83;
-    --accent: #b58900;
-  }
-
-  [data-theme="emerald"] {
-    --bg: #e0f2f1;
-    --text: #004d40;
-    --accent: #1de9b6;
-  }
-
-  [data-theme="cyberpunk"] {
-    --bg: #0f0c29;
-    --text: #f72585;
-    --accent: #7209b7;
-  }
-
-  body {
-    background-color: var(--bg);
-    color: var(--text);
-    transition: background-color 0.5s ease, color 0.5s ease;
-  }
-
-  .btn {
-    background-color: var(--accent);
-    color: white;
-  }
-
-  .glass-card {
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 1rem;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  }
-</style>
-
-<body class="min-h-screen flex flex-col items-center justify-center text-lg">
+<body class="bg-white text-gray-800 dark:bg-gray-900 dark:text-white transition-colors duration-300">
 
  <!-- Navbar -->
 <header class="fixed w-full top-0 z-50 bg-white dark:bg-gray-900 shadow-md">
@@ -84,15 +33,7 @@
       <a href="#contact" class="hover:text-green-500 transition">Contact</a>
     </nav>
     
-    <div class="theme-switcher fixed top-4 right-4 z-50">
-      <select id="themeSelector" class="rounded p-2 bg-gray-800 text-white">
-        <option value="light">🌞 Light</option>
-        <option value="dark">🌚 Dark</option>
-        <option value="solarized">🌅 Solarized</option>
-        <option value="emerald">🌿 Emerald</option>
-        <option value="cyberpunk">💾 Cyberpunk</option>
-      </select>
-    </div>
+    <a href="#contact" class="bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition">Let's Connect</a>
   </div>
 </header>
 
@@ -475,12 +416,7 @@
     return false; // Prevent default form submission
   }
   </script>
-  <script>
-    const selector = document.getElementById("themeSelector");
-    selector.addEventListener("change", (e) => {
-      document.documentElement.setAttribute("data-theme", e.target.value);
-    });
-  </script>
+ 
   
 </body>
 </html>
