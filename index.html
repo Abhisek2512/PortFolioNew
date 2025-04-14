@@ -11,30 +11,13 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="icon" href="assets/favicon.png" type="image/png">
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- <style>
-    :root {
-      --bg: #ffffff;
-      --text: #242020;
-      --accent: #050505;
-    }
+<style>
+  .hover-glow:hover {
+  text-shadow: 0 0 10px #22d3ee;
+  transform: scale(1.05);
+}
 
-    [data-theme="dark"] {
-      --bg: #111111;
-      --text: #0f0f0f;
-      --accent: #080808;
-    }
-
-    body {
-      background-color: var(--bg);
-      color: var(--text);
-      transition: background-color 0.5s ease, color 0.5s ease;
-    }
-
-    .btn {
-      background-color: var(--accent);
-      color: white;
-    }
-  </style> -->
+</style>
 </head>
 <!-- <body class="min-h-screen "></body> -->
 <!-- <body class="min-h-screen flex items-center justify-center text-lg">-->
@@ -50,13 +33,13 @@
     
     <!-- Desktop Navigation -->
     <nav id="desktopNav" class="space-x-4 hidden md:block">
-      <a href="#about" class="hover:text-green-500 transition">About</a>
-      <a href="#experience" class="hover:text-green-500 transition">Experience</a>
-      <a href="#Education" class="hover:text-green-500 transition">Education</a>
-      <a href="#projects" class="hover:text-green-500 transition">Projects</a>
-      <a href="#skills" class="hover:text-green-500 transition">Skills</a>
-      <a href="#certifications" class="hover:text-green-500 transition">Certifications</a>
-      <a href="#contact" class="hover:text-green-500 transition">Contact</a>
+      <a href="#about" class="hover:text-green-500 transition">👨‍🔬 About Me</a>
+      <a href="#experience" class="hover:text-green-500 transition">💼 Experience</a>
+      <a href="#Education" class="hover:text-green-500 transition">🎓 Education </a>
+      <a href="#projects" class="hover:text-green-500 transition">📂 Projects </a>
+      <a href="#skills" class="hover:text-green-500 transition">🔧 Skills </a>
+      <a href="#certifications" class="hover:text-green-500 transition">📜 Certifications</a>
+      <a href="#contact" class="hover:text-green-500 transition">📞 Contact Me</a>
     </nav>
      <!-- Toggle Button -->
   <!-- <div class="fixed top-4 right-4 z-50"> -->
@@ -209,7 +192,10 @@
       <h2 class="text-3xl font-bold mb-10 text-center">Projects</h2>
       <div class="grid md:grid-cols-2 gap-8">
         <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 hover:shadow-xl transition" data-aos="fade-up">
-          <h3 class="text-xl font-semibold mb-2">VENDING MACHINE WITH PAYMENT INTEGRATION</h3>
+          <h3 class="text-xl font-semibold mb-2 hover-glow transition-all duration-300 cursor-pointer">
+            💡 VENDING MACHINE WITH PAYMENT INTEGRATION
+          </h3>
+          
           <p class="mb-2 text-sm">Designed an IoT-enabled vending system integrating proximity sensors, Arduino, relays, buck converter, and ESP8266 for UPI payment.</p>
           <p class="text-sm italic">Tech: Arduino, ESP8266, IFTTT, Blink IoT</p>
           
