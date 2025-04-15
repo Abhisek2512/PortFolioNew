@@ -23,14 +23,7 @@
   text-shadow: 0 0 10px #d0dee2;
   transform: scale(1.05);
 }
-:root.dark {
-      --bg: #121212;
-      --card: #1e1e1e;
-      --text: #ffffff;
-      --accent: #28a745;
-      --input-bg: #2c2c2c;
-      --input-text: #ffffff;
-    }
+
 </style>
 <script type="application/ld+json">
   {
@@ -514,7 +507,7 @@
     return false; // Prevent default form submission
   }
   </script>
-  <!-- <script>
+  <script>
     const toggleBtn = document.getElementById('themeToggle');
     const icon = document.getElementById('themeIcon');
     const root = document.documentElement;
@@ -540,18 +533,8 @@
     const saved = localStorage.getItem('theme') || 'light';
     setTheme(saved);
   </script>
-  -->
-  <script>
-     const themeToggle = document.getElementById('themeToggle');
-    // const headerTitle = document.getElementById('headerTitle');
-
-    themeToggle.addEventListener('change', () => {
-      document.documentElement.classList.toggle('dark');
-      updateThemeIcon();
-    });
-
-    updateThemeIcon();
-  </script>
+ 
+  
 </body>
 </html>
 
