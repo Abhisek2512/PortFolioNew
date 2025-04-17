@@ -26,6 +26,12 @@
 }
 
 </style>
+<script>
+  tailwind.config = {
+    darkMode: 'class'
+  }
+</script>
+
 <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -519,28 +525,31 @@
     const toggleBtn = document.getElementById('themeToggle');
     const icon = document.getElementById('themeIcon');
     const root = document.documentElement;
-
+  
     function setTheme(theme) {
-      root.setAttribute('data-theme', theme);
-      localStorage.setItem('theme', theme);
-
       if (theme === 'dark') {
+        root.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
         icon.innerHTML = `<path d="M21.64 13a9 9 0 11-9.64-9.64A7 7 0 0021.64 13z"/>`; // Moon
         icon.classList.replace('text-yellow-400', 'text-white');
       } else {
+        root.classList.remove('dark');
+        localStorage.setItem('theme', 'light');
         icon.innerHTML = `<path d="M12 18a6 6 0 100-12 6 6 0 000 12zM12 2v2m0 16v2m10-10h-2M4 12H2m16.95-6.364l-1.415 1.414M6.464 17.536l-1.414 1.415m12.728 1.414l-1.414-1.414M6.464 6.464L5.05 7.878"/>`; // Sun
         icon.classList.replace('text-white', 'text-yellow-400');
       }
     }
-
+  
     toggleBtn.addEventListener('click', () => {
-      const current = root.getAttribute('data-theme');
-      setTheme(current === 'dark' ? 'light' : 'dark');
+      const isDark = root.classList.contains('dark');
+      setTheme(isDark ? 'light' : 'dark');
     });
-
-    const saved = localStorage.getItem('theme') || 'light';
-    setTheme(saved);
+  
+    // Initialize theme from localStorage
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    setTheme(savedTheme);
   </script>
+  
  
   
 </body>
