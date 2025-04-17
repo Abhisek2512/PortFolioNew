@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
  
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="icon" href="favicon/favicon-16x16.png" type="image/png">
+  <link rel="icon" href="favicon/favicon-16x16.png" type="image/png/gif">
 
   <script src="https://cdn.tailwindcss.com"></script>
 <style>
@@ -24,6 +24,10 @@
   text-shadow: 0 0 10px #d0dee2;
   transform: scale(1.05);
 }
+#preloader {
+  transition: opacity 0.5s ease;
+}
+
 
 </style>
 <script>
@@ -56,6 +60,11 @@
   </script>
   
 </head>
+<!-- Preloader -->
+<div id="preloader" class="fixed inset-0 z-50 flex items-center justify-center bg-white dark:bg-gray-900">
+  <div class="animate-spin rounded-full h-12 w-12 border-t-4 border-blue-500"></div>
+</div>
+
 
 <body class="bg-white text-gray-800 dark:bg-gray-900 dark:text-white transition-colors duration-300">
  
@@ -551,6 +560,16 @@
   </script>
   
  
+  <script>
+    window.addEventListener('load', () => {
+      const preloader = document.getElementById('preloader');
+      preloader.style.opacity = '0';
+      preloader.style.pointerEvents = 'none';
+      setTimeout(() => {
+        preloader.remove();
+      }, 500); // Optional: fully remove after fade
+    });
+  </script>
   
 </body>
 </html>
