@@ -378,6 +378,30 @@
 
     </div>
   </section>
+
+  <!-- Premium Animated Gallery -->
+<section id="gallery" class="py-20 px-6 bg-gray-100 dark:bg-gray-800">
+  <div class="max-w-7xl mx-auto text-center">
+    <h2 class="text-3xl font-bold mb-4">📸 Project Execution Gallery</h2>
+    <p class="mb-10 text-gray-600 dark:text-gray-300">
+      Real site execution highlights from utility-scale solar projects.
+    </p>
+
+    <div id="galleryContainer"
+         class="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-5 space-y-5">
+    </div>
+
+    <!-- Load More Button -->
+    <div class="mt-10">
+      <button id="loadMoreBtn"
+              class="bg-blue-500 text-white px-6 py-2 rounded-full hover:bg-blue-600 transition shadow-lg">
+        Load More
+      </button>
+    </div>
+  </div>
+</section>
+
+
   <!-- Skills Section -->
   <section id="skills" class="py-20 px-6 bg-gray-100 dark:bg-gray-800">
     <div class="max-w-5xl mx-auto">
@@ -644,6 +668,108 @@
       chatbotContainer.classList.add('hidden');
     });
   </script>
+
+  <!-- Premium Lightbox -->
+<div id="imageModal"
+     class="fixed inset-0 bg-black bg-opacity-95 hidden items-center justify-center z-50">
+
+  <button onclick="closeModal()"
+          class="absolute top-6 right-8 text-white text-3xl">✖</button>
+
+  <button onclick="prevImage()"
+          class="absolute left-6 text-white text-4xl">❮</button>
+
+  <img id="modalImage"
+       class="max-h-[85%] max-w-[90%] rounded-lg shadow-2xl transition duration-500">
+
+  <button onclick="nextImage()"
+          class="absolute right-6 text-white text-4xl">❯</button>
+</div>
+
+
+<script>
+  const images = [
+    "gallary/1.jpg",
+    "gallary/2.jpg",
+    "gallary/3.jpg",
+    "gallary/4.jpg",
+    "gallary/5.jpg",
+    "gallary/6.jpg",
+    "gallary/3.jpg",
+    "gallary/4.jpg",
+    "gallary/5.jpg",
+    "gallary/6.jpg",
+    "gallary/6.jpg",
+    // Add unlimited photos here
+  ];
+
+  const container = document.getElementById("galleryContainer");
+  const loadMoreBtn = document.getElementById("loadMoreBtn");
+
+  let currentIndex = 0;
+  let visibleCount = 8; // Initial images shown
+
+  function loadImages() {
+    const nextImages = images.slice(currentIndex, currentIndex + visibleCount);
+
+    nextImages.forEach((src, index) => {
+      const wrapper = document.createElement("div");
+      wrapper.className = "break-inside-avoid opacity-0 translate-y-5 transition duration-700";
+
+      const img = document.createElement("img");
+      img.src = src;
+      img.loading = "lazy";
+      img.className =
+        "w-full rounded-xl shadow-md hover:shadow-xl cursor-pointer transform hover:scale-105 transition duration-300";
+
+      img.onclick = () => openModal(currentIndex + index);
+
+      wrapper.appendChild(img);
+      container.appendChild(wrapper);
+
+      // Animation trigger
+      setTimeout(() => {
+        wrapper.classList.remove("opacity-0", "translate-y-5");
+      }, 100);
+    });
+
+    currentIndex += visibleCount;
+
+    if (currentIndex >= images.length) {
+      loadMoreBtn.style.display = "none";
+    }
+  }
+
+  loadMoreBtn.addEventListener("click", loadImages);
+
+  // Initial Load
+  loadImages();
+
+  // Lightbox Functions
+  let modalIndex = 0;
+
+  function openModal(index) {
+    modalIndex = index;
+    document.getElementById("imageModal").classList.remove("hidden");
+    document.getElementById("imageModal").classList.add("flex");
+    document.getElementById("modalImage").src = images[index];
+  }
+
+  function closeModal() {
+    document.getElementById("imageModal").classList.add("hidden");
+  }
+
+  function nextImage() {
+    modalIndex = (modalIndex + 1) % images.length;
+    document.getElementById("modalImage").src = images[modalIndex];
+  }
+
+  function prevImage() {
+    modalIndex = (modalIndex - 1 + images.length) % images.length;
+    document.getElementById("modalImage").src = images[modalIndex];
+  }
+</script>  
+ 
 </body>
 </html>
 
